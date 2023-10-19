@@ -1,0 +1,584 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sxl="clr-namespace:System.Xml.Linq;assembly=System.Private.Xml.Linq" xmlns:uas="clr-namespace:UiPath.Activities.System;assembly=UiPath.System.Activities" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uuam="clr-namespace:UiPath.UIAutomationNext.Activities.Models;assembly=UiPath.UIAutomationNext.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="dt_Table" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="DadosNFE" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1162,11972</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.Activities.System</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Files.Models</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Excel</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>System.Windows.Documents</x:String>
+      <x:String>System.Windows.Media.Animation</x:String>
+      <x:String>System.Windows</x:String>
+      <x:String>System.Windows.Threading</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>My</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>PresentationUI</AssemblyReference>
+      <AssemblyReference>System.Windows.Presentation</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Private.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>ℛ*c16a5073-ad31-4b2c-966f-210bdc2ceea3#70-0</AssemblyReference>
+      <AssemblyReference>ℛ*c16a5073-ad31-4b2c-966f-210bdc2ceea3#71-0</AssemblyReference>
+      <AssemblyReference>ℛ*c16a5073-ad31-4b2c-966f-210bdc2ceea3#86-0</AssemblyReference>
+      <AssemblyReference>ℛ*c16a5073-ad31-4b2c-966f-210bdc2ceea3#87-0</AssemblyReference>
+      <AssemblyReference>ℛ*c16a5073-ad31-4b2c-966f-210bdc2ceea3#88-0</AssemblyReference>
+      <AssemblyReference>ℛ*c16a5073-ad31-4b2c-966f-210bdc2ceea3#91-0</AssemblyReference>
+      <AssemblyReference>ℛ*c16a5073-ad31-4b2c-966f-210bdc2ceea3#92-0</AssemblyReference>
+      <AssemblyReference>ℛ*c16a5073-ad31-4b2c-966f-210bdc2ceea3#93-0</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="688,11907" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:IEnumerable(uuam:NWordInfo)" Name="_out_NGetText_3__WordsInfo" />
+      <Variable x:TypeArguments="x:String" Name="vtXML" />
+      <Variable x:TypeArguments="x:String" Name="cnpjXML" />
+      <Variable x:TypeArguments="x:String" Name="nomeXML" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Portal de serviços" sap:VirtualizedContainerService.HintSize="626,11796" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsCVEnabled="False" ScopeGuid="1cfdc76d-3295-418d-84c4-af4191e778c3" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="592,11579" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="ui:PasswordCredentials" Name="NFECREDENTIALS" />
+              <Variable x:TypeArguments="sd:DataTable" Name="D" />
+              <Variable x:TypeArguments="sd:DataTable" Name="ExtractedDataNfe" />
+              <Variable x:TypeArguments="x:String" Name="RazaoSocial" />
+              <Variable x:TypeArguments="x:String" Name="CNPJ" />
+              <Variable x:TypeArguments="x:String" Name="ValorTotalNota" />
+              <Variable x:TypeArguments="x:String" Name="DataHoraHoje" />
+              <Variable x:TypeArguments="x:String" Name="DateHoursNow" />
+              <Variable x:TypeArguments="x:String" Name="folderPathDownload" />
+              <Variable x:TypeArguments="x:Boolean" Name="Exists" />
+              <Variable x:TypeArguments="x:String" Name="folderPathLatestDownload" />
+              <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="latesteFile" />
+              <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="latesteFilePDF" />
+              <Variable x:TypeArguments="x:String" Name="xmlOut" />
+              <Variable x:TypeArguments="sxl:XDocument" Name="out_data" />
+              <Variable x:TypeArguments="x:String" Name="textoPDF" />
+              <Variable x:TypeArguments="x:String" Name="afterSeparator" />
+              <Variable x:TypeArguments="x:String" Name="beforeSeparator" />
+              <Variable x:TypeArguments="x:String" Name="strCNPJdado" />
+              <Variable x:TypeArguments="x:String" Name="beforeSeparatorNome" />
+              <Variable x:TypeArguments="x:String" Name="NomePdf" />
+              <Variable x:TypeArguments="x:String" Name="ValorNotaPdf" />
+              <Variable x:TypeArguments="x:String" Name="AfterSeparatorPdf" />
+              <Variable x:TypeArguments="x:String" Name="DocumentNotaFiscalPath">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:String">C:\Users\peruc\OneDrive\Documentos\DadosNotaFiscall</Literal>
+                </Variable.Default>
+              </Variable>
+              <Variable x:TypeArguments="x:String" Name="DownloadPath">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:String">C:\Users\peruc\Downloads</Literal>
+                </Variable.Default>
+              </Variable>
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uas:GetUsernamePasswordX OrchestratorCredentialName="{x:Null}" TimeoutInSeconds="{x:Null}" AutosubmitTimeoutSeconds="10" Credential="[NFECREDENTIALS]" CredentialName="UiPath: credentialsnfe" CredentialsSource="CredentialsManager" DisplayName="Get Username/Password" sap:VirtualizedContainerService.HintSize="530,175" sap2010:WorkflowViewState.IdRef="GetUsernamePasswordX_3" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Usuário'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="530,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Text="[NFECREDENTIALS.Username]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Portal/Default.aspx?ReturnUrl=%2fEissnfeWebApp%2fSistema%2fGeral%2fLogin.aspx" CvElementArea="39, 308, 170, 32" CvType="InputBox" DesignTimeRectangle="40, 353, 169, 31" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT UsuarioTextBox'" FullSelectorArgument="&lt;webctrl id='UsuarioTextBox' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='UsuarioTextBox' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="a26c2fe5-c8f1-40ac-9f4e-308eaca7c290" InformativeScreenshot="e07bcdb58d75b6e87a0f154cc6b56f04.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Portal de serviços' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="40, 336, 46, 15" ElementType="Text" FriendlyName="'Usuário'" FullSelectorArgument="&lt;webctrl id='lblUsuario' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='lblUsuario' tag='SPAN' type='' class='form-label' aaname='Usuário' check:innerText='Usuário' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADIAAAATCAYAAADSz14iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB1SURBVEhL7dLRCoAgDIXh3v8hC8IEIymidhHkYqSC0AOcxQb/jXrz4brrdCw575noYK1TIXGZOMwhH+ubCim/sm4xX+maBkL7i5GfkTVL6c7P8KeBlGTNBDSMnnslfUI0ZhC0DIKWQdAyCFoGQcsgaP0E4vgBEx1DPX+gVyYAAAAASUVORK5CYII=" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Senha'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="530,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Text="[NFECREDENTIALS.Password]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Portal/Default.aspx?ReturnUrl=%2fEissnfeWebApp%2fSistema%2fGeral%2fLogin.aspx" CvElementArea="39, 437, 170, 32" CvType="InputBox" DesignTimeRectangle="40, 438, 169, 31" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'INPUT SenhaTextBox'" FullSelectorArgument="&lt;webctrl id='SenhaTextBox' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='SenhaTextBox' tag='INPUT' type='password' class='form-control' aaname='' /&gt;" Guid="fc0bea0e-968c-4254-8b33-176012b7ddb2" InformativeScreenshot="0943a4a8089b775bd00464b5de8e189d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Portal de serviços' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="39, 421, 39, 13" CvTextArgument="Senha" CvType="Text" DesignTimeRectangle="40, 421, 38, 15" ElementType="Text" FriendlyName="'Senha'" FullSelectorArgument="&lt;webctrl id='lblSenha' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='lblSenha' tag='SPAN' type='' class='form-label' aaname='Senha' check:innerText='Senha' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACoAAAATCAYAAADmtp8+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEXSURBVEhL7ZQ9EoMgEIVzlRQWnko9iJXewp5DWNvYegArxxukSbPBBXVZUKNSJDMUbyaE/fnYBz7erwH+QQHUtwKoqRqKKIaice19JwaqCj6psgpGI+aKvIJ2ILIYUtEZAW2ZgOjX9TX5BO0rSKNjqFEkzmm3pVyXFR5W7dNaGlRMPexcy0mHi2SiOnjHagWZQ6vXE9zsAIISOIxdavHazL0mJ9NWsdzZwzu6JjiuhmwwN1cTrZ17c11qPT0kl1VLioEyTc2WBgqUHgLlCRTzad1ToMYU1e+tB3EHFHOXWEctKfMxkeDlP37vyB1FePmA7k7UzNXObU/UZa39FTBevZS7mdQZ63Ega890H/S3FUB9K4D61QAf3tz2WEpqNGQAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Entrar'" sap:VirtualizedContainerService.HintSize="530,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Portal/Default.aspx?ReturnUrl=%2fEissnfeWebApp%2fSistema%2fGeral%2fLogin.aspx" CvElementArea="77, 508, 95, 33" CvTextArea="105, 518, 39, 12" CvTextArgument="Entrar" CvType="Button" DesignTimeRectangle="79, 510, 91, 30" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Entrar'" FullSelectorArgument="&lt;webctrl id='btnEntrar' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='btnEntrar' tag='INPUT' type='submit' class='btn-entra m-1' aaname='     Entrar     ' check:text='Entrar' /&gt;" Guid="05143f7b-cb7e-403c-bd0f-a1ea204b7376" InformativeScreenshot="42e8072c2718ac61f331e62228033b76.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Portal de serviços' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="60, 473, 128, 15" CvTextArgument="Esqueci minha senha" CvType="Text" DesignTimeRectangle="61, 473, 127, 15" ElementType="Text" FriendlyName="'Esqueci minha senha'" FullSelectorArgument="&lt;webctrl aaname='Esqueci minha senha' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Esqueci minha senha' tag='A' type='' class='' check:innerText='Esqueci minha senha' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIMAAAATCAYAAACz+74lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI9SURBVGhD7ZY7csJADIZzgRyQS3AJGu7gngv4DDQUOUEKCppUFEzCEIbZaLUPPXYdm4cTM6Pim8FoV/ql/Vn88v25c4bhMTMYGTODkTEzGJnnM8P26Gbzs1ttK7Gr2bvV4uJm7b4SK1k3F/faHKqxKXCvPmaGg1vOIZlmcXQ7tuHfMTN08nAzLDdygUGYGVS8emPgr5XFgJSnELg5qdtG5pX1ZQx/wX03Q4wvm3Peh/V9Xf6M6+XNsGthD2hbec1xLdcTeoE47AlxqQPjqUbf7aVnpmeUYye3jt+PrW+wGXwifp2umyQy7KOYzBMEdplB7cUBdeWFg2shzyAz6JxMg9hfMQPTHg6FDiMMk2qnw8m9sD5xrTA9J9SlWcMzHCKuxZqqRsw7tr6B7wxBvDjUhBKU8gwyQ7GXDamIRQaZgcelHvlcMQMfEOZSw+7qRdOlHwkayOhEUYNpGFvfzX8TuZGioMzTbwbKmchmqDUyZTMU/XSZAcDctFbMi30feJAZevTd9gLJB44FeNIrzcDFcoq8keKwFUX8j8yAelndLv012Fpfo3ZjeMbWN9AMMLT0n+YRA1f7sAg9ywbC8Ok57BXNw/6wV8fg2Tc6aTPQWsylhk3EXtIz34ufZX/p/WxsfQPfGWIh9j0NF8BCMQbC5fCjATAOTbZMIKLrMoHYLMXw0KZqBtEn5Fz8Zga5Vh++mKcn1hxbHzPDo9DDN54FNMPb+we58E64GWpxY3p8HZgZDMNjZjAyZgYjsnM/AALRDxARoNkAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Notas Fiscais'" sap:VirtualizedContainerService.HintSize="530,157" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Geral/Home.aspx" CvTextArea="551, 261, 79, 13" CvTextArgument="Notas Fiscais" CvType="Text" DesignTimeRectangle="540, 257, 103, 23" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Notas Fiscais'" FullSelectorArgument="&lt;webctrl aaname='Notas Fiscais' parentid='top-menu' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Notas Fiscais' parentid='top-menu' tag='A' type='' class='' check:innerText='Notas Fiscais' /&gt;" Guid="a06282bb-9bf2-4c7d-9995-cd0916e299c5" InformativeScreenshot="16200b0792bdd52c9ab08b450694b189.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Pesquisar NF-E Recebida'" sap:VirtualizedContainerService.HintSize="530,157" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Geral/Home.aspx" CvTextArea="551, 422, 149, 15" CvTextArgument="Pesquisar NF-E Recebida" CvType="Text" DesignTimeRectangle="540, 418, 266, 23" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Pesquisar NF-E Recebida'" FullSelectorArgument="&lt;webctrl aaname='Pesquisar NF-E Recebida' parentid='top-menu' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Pesquisar NF-E Recebida' parentid='top-menu' tag='A' type='' class='' check:innerText='Pesquisar NF-E Recebida' /&gt;" Guid="43170155-d904-451b-8727-f6bbafa42e5b" InformativeScreenshot="20e1a7e8f5a12611faa753c6395d7ac5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'unchecked'" sap:VirtualizedContainerService.HintSize="530,157" sap2010:WorkflowViewState.IdRef="NCheck_3" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Version="V3">
+              <uix:NCheck.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Prestador/PesquisarNFERecebida.aspx?IdPermissaoAcesso=206" DesignTimeRectangle="208, 380, 13, 13" DesignTimeScaleFactor="1" ElementType="RadioButton" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl id='MainContentPlaceHolder_MainContentPlaceHolder_RadioButtonList1' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='MainContentPlaceHolder_MainContentPlaceHolder_RadioButtonList1_0' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContentPlaceHolder_MainContentPlaceHolder_RadioButtonList1' tag='TABLE' /&gt;&lt;webctrl id='MainContentPlaceHolder_MainContentPlaceHolder_RadioButtonList1_0' type='radio' tag='INPUT' class='' aaname='Notas de Serviço (NF-E)' /&gt;" Guid="4b1fe5ef-ca03-44cc-b44b-13a2b013a505" InformativeScreenshot="04ae51eb662cf0af5ba42b0ab15ec39c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="255, 380, 99, 14" CvTextArgument="de Servico (NF-E)" CvType="Text" DesignTimeRectangle="221, 380, 134, 13" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl id='MainContentPlaceHolder_MainContentPlaceHolder_RadioButtonList1' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContentPlaceHolder_MainContentPlaceHolder_RadioButtonList1' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='' aaname='Notas de Serviço (NF-E)' check:innerText='Notas de Serviço (NF-E)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAARCAYAAAACJjTkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL1SURBVGhD7VhLjuIwEPUZI/VV2IOyZTdzAhR2XIOWuAAH6AVrTuBxlX+vynbaw9CIkfwkq4njVL169ezQGDsw0IFhlIEuDKMMdGEYZaAL5nQ6hY9vjM/Zmo/F3sLlO+F2nOx0fC4zimnMbM/h+lU474w1u3pWs9/v7fV6DeSMKJrnGg8ietc9jIeNcrPLhyve1ZXGT/J8Br4WO6FJ+NrxxvrFmrOdsT4ek12++GYBNoNeD5rQ/fkzXADM5XKxh8MhNHt2STPJ/90oVLTc7c44u/c8mSIKzsEUMzawMErbGBqlJgoUu6K1ud/vdrvdpmbT3xioMAA1LLowBouOD8M/q1yOiTHGWoEqbjtG64j2p0ltdyQ04rCYbtP4/JP9/UvpAI1CvWLOFDM9I+fbnCpNj7mwgZD/6UZhrmU8/jK72WzAFJQ4i5CKZXI5AN4rDKWQyamiXMylKpo3WhIUTxQhkgPda+VGI+g1K3GIrzzBsiYENAd+1k04O7PRMxwv5V9pLHESeR2AJ8VhTQR3r1Wqs1YrgLl8sz7lARQnCiEWLwygGwJkxboAngMyXsC8s1Z3uhYMjYLNj0OLW0ESqCMOrcWGE7J4csdFrfR8Rjlfi8/4xijpPs6xUVp5c20xXzM3INeaob6jxGb7HbQ8ahRuQiykTo7msAABLZg2ihazGyDqSpyqmHG94vZSozhwE484t3JCVdDMDeAc2ijivx5oNl+TG+McE86EcH3VKKlg72wmRzF0DnwuQRbP62I85oGFuPjHVowsMANFX4lTF9M3fHK1oIjELa7Vz/31q6d2DzkTAu+8EZ9tlNLYhPQ7Stk0IoAFOpABmKQbwvlhrRuehDeHX+vFLedpqEYiINfkiIt8yIPuNwrnmmBdka8RpyWmjydjoFGK+pJ2cl7vVkSRWxvFgY33D0ZJ/OLAHlM+fao5jF9mfwi3o3t1dzZPoGKMV4KMVDPyMMqTkU6xyq7sRe3kegX4tBFvlYxhlIEuDKMMdMDaP6noRXtsl7mlAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheck.Target>
+            </uix:NCheck>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'INPUT DataInicioTextBox'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="530,218" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Text="01/06/2023" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Prestador/PesquisarNFERecebida.aspx?IdPermissaoAcesso=206" CvElementArea="245, 434, 84, 18" CvType="InputBox" DesignTimeRectangle="247, 435, 82, 15" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT DataInicioTextBox'" FullSelectorArgument="&lt;webctrl id='MainContentPlaceHolder_MainContentPlaceHolder_Table1' tag='TABLE' /&gt;&lt;webctrl id='DataInicioTextBox' tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContentPlaceHolder_MainContentPlaceHolder_Table1' tag='TABLE' /&gt;&lt;webctrl id='DataInicioTextBox' type='text' tag='INPUT' class='required hasDatepicker' aaname='Data inicial' /&gt;" Guid="c70f574e-f256-4aa0-84cc-f0aaf26a4fbf" InformativeScreenshot="122cd41b79392aee1f80f2b32eac1df6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'INPUT DataTerminoTextBox'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="530,218" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Text="30/06/2023" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Prestador/PesquisarNFERecebida.aspx?IdPermissaoAcesso=206" DesignTimeRectangle="353, 428, 82, 15" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT DataTerminoTextBox'" FullSelectorArgument="&lt;webctrl id='MainContentPlaceHolder_MainContentPlaceHolder_Table1' tag='TABLE' /&gt;&lt;webctrl id='DataTerminoTextBox' tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContentPlaceHolder_MainContentPlaceHolder_Table1' tag='TABLE' /&gt;&lt;webctrl id='DataTerminoTextBox' type='text' tag='INPUT' class='required hasDatepicker' aaname='Data final' /&gt;" Guid="25e06111-aa44-49ef-bdd7-703ca6ccdae0" InformativeScreenshot="65c1bf1caa9ae610181d9b6c45ebcd20.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Pesquisar'" sap:VirtualizedContainerService.HintSize="530,157" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Prestador/PesquisarNFERecebida.aspx?IdPermissaoAcesso=206" CvElementArea="1037, 470, 72, 22" CvTextArea="1047, 475, 54, 13" CvTextArgument="Pesquisar" CvType="Button" DesignTimeRectangle="1038, 471, 71, 19" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Pesquisar'" FullSelectorArgument="&lt;webctrl id='MainContentPlaceHolder_MainContentPlaceHolder_Table1' tag='TABLE' /&gt;&lt;webctrl id='PesquisarPorPeriodoButton' tableRow='4' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContentPlaceHolder_MainContentPlaceHolder_Table1' tag='TABLE' /&gt;&lt;webctrl id='PesquisarPorPeriodoButton' type='submit' tag='INPUT' class='button float-right' aaname='Pesquisar' check:text='Pesquisar' /&gt;" Guid="d82cde39-d403-4c2a-9a27-b4306acd6b26" InformativeScreenshot="262770141fb25f9f3f6b81344e8a688d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="530,157" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Prestador/PesquisarNFERecebida.aspx?IdPermissaoAcesso=206" DesignTimeRectangle="1008, 595, 20, 20" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl id='DataTables_Table_0' tableRow='5' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl id='DataTables_Table_0' tag='TABLE' /&gt;&lt;webctrl type='' tag='IMG' class='' aaname='Editar' /&gt;" Guid="94ea5906-fee6-4a9e-bdd1-9e31c397b683" InformativeScreenshot="c3cf826bde063565e6084b219a577020.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NGetText DisplayName="Get Text 'Razao Social/Nome'" sap:VirtualizedContainerService.HintSize="530,157" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" TextString="[RazaoSocial]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Prestador/PesquisarNFERecebida.aspx?IdPermissaoAcesso=206" CvTextArea="499, 278, 531, 12" CvType="AnyWordGroup" DesignTimeRectangle="498, 277, 532, 13" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'chrome.exe ISS/NF-E'" Guid="68d3588d-02ea-492d-9424-f84d581d662c" InformativeScreenshot="8d259b80f40f5ee68849cb12f1e3ec10.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                      <uix:Target CvTextArea="362, 277, 133, 15" CvTextArgument="Razao Social/Nome:" CvType="Text" DesignTimeRectangle="362, 277, 133, 15" ElementType="Text" FriendlyName="'Razao Social/Nome'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                      <uix:Target CvTextArea="573, 254, 193, 15" CvTextArgument="PRESTADOR DE SERVICOS" CvType="Text" DesignTimeRectangle="573, 254, 193, 15" ElementType="Text" FriendlyName="'PRESTADOR DE SERVICOS'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'CNPJ/CPF'" sap:VirtualizedContainerService.HintSize="530,157" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" TextString="[CNPJ]" Version="V3" WordsInfo="[_out_NGetText_3__WordsInfo]">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Prestador/PesquisarNFERecebida.aspx?IdPermissaoAcesso=206" CvTextArea="436, 295, 151, 16" CvType="AnyWordGroup" DesignTimeRectangle="436, 295, 152, 15" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'chrome.exe ISS/NF-E'" Guid="0cfa3400-5677-4ddc-8f98-9a1c195d63a6" InformativeScreenshot="8d6ddcfac3f23c14122cc4ac9061ea2e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                      <uix:Target CvTextArea="362, 295, 70, 15" CvTextArgument="CNPJ/CPF:" CvType="Text" DesignTimeRectangle="362, 295, 71, 15" ElementType="Text" FriendlyName="'CNPJ/CPF'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                      <uix:Target CvTextArea="573, 254, 193, 15" CvTextArgument="PRESTADOR DE SERVICOS" CvType="Text" DesignTimeRectangle="573, 254, 193, 15" ElementType="Text" FriendlyName="'PRESTADOR DE SERVICOS'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="530,237" sap2010:WorkflowViewState.IdRef="NMouseScroll_2" InteractionMode="HardwareEvents" MovementUnits="10" Version="V3">
+              <uix:NMouseScroll.SearchedElement>
+                <uix:SearchedElement>
+                  <uix:SearchedElement.Target>
+                    <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Prestador/PesquisarNFERecebida.aspx?IdPermissaoAcesso=206" CvTextArea="933, 545, 55, 15" CvTextArgument="402,00" CvType="Text" DesignTimeRectangle="933, 545, 55, 15" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'402,00'" Guid="84eec3be-0a08-4090-ae10-49adf895e90f" InformativeScreenshot="81358b0cad82afafbfdd05da62cd391a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CvTextArea="890, 520, 142, 13" CvTextArgument="Valor Total da Nota" CvType="Text" DesignTimeRectangle="890, 520, 142, 13" ElementType="Text" FriendlyName="'Valor Total da Nota'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:SearchedElement.Target>
+                  <uix:SearchedElement.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:SearchedElement.Timeout>
+                </uix:SearchedElement>
+              </uix:NMouseScroll.SearchedElement>
+            </uix:NMouseScroll>
+            <uix:NGetText DisplayName="Get Text 'Valor Total da Nota'" sap:VirtualizedContainerService.HintSize="530,157" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" TextString="[ValorTotalNota]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Prestador/PesquisarNFERecebida.aspx?IdPermissaoAcesso=206" CvTextArea="933, 532, 55, 15" CvType="AnyWordGroup" DesignTimeRectangle="933, 532, 55, 15" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'chrome.exe ISS/NF-E'" Guid="50f4fce3-c5ef-48f1-b46a-ae36c79813fb" InformativeScreenshot="f330dd167c270817d29c349183e46722.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="890, 507, 142, 13" CvTextArgument="Valor Total da Nota" CvType="Text" DesignTimeRectangle="890, 507, 142, 13" ElementType="Text" FriendlyName="'Valor Total da Nota'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Fechar'" sap:VirtualizedContainerService.HintSize="530,157" sap2010:WorkflowViewState.IdRef="NClick_18" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Prestador/PesquisarNFERecebida.aspx?IdPermissaoAcesso=206" CvTextArea="1030, 654, 39, 12" CvTextArgument="Fechar" CvType="Text" DesignTimeRectangle="1019, 648, 60, 26" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Fechar'" FullSelectorArgument="&lt;webctrl class='ui-button-text' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ui-button-text' tag='SPAN' type='' aaname='Fechar' check:innerText='Fechar' /&gt;" Guid="e7c723d9-34cc-4b29-ac7a-ca187f47686d" InformativeScreenshot="a45790f2ab8a13f4389834bd5a9479ae.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvElementArea="1017, 646, 65, 30" CvTextArea="1030, 654, 39, 12" CvTextArgument="Fechar" CvType="Button" DesignTimeRectangle="1018, 647, 62, 28" ElementType="Button" FriendlyName="'Fechar'" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-focus' aaname='Fechar' check:innerText='Fechar' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEIAAAAgCAYAAACmaK65AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI7SURBVGhD7ZnBTsJAEIa9ePDoS+mF+CboxYRHAPHIAwDiA3giJGL0RoJFxBgbE01TQ9D00MSDCiqMM9td2m630TZ46fbwBTo72+7/wRLSrrmuCzku5CI4IRGvzxcwvduBL2MTvi43sgvmo5yUNyKCitTwPSnD/OMO5jM7u2A+ykl5hYylCDLEJKgmZhTKS7lDIshO5r8JMpiXcodF4N5RNmccyp2LQHIRnFwEJxfBWZEIA8yDdejth+l3DEXvL4xr0N8vgaUa+0dWKmI0VI0lJBfBya4Iads0TvyxYSmwlXh4LmLUEPUCmGOv3+kUAv1+nZ3noAYOP1+aLblSEf4ihZSoIAsDsoWyRQc+eRRgUh8T4c9h4Smk6OOE6kxEAfpByQlRi3i7SsgpmBVcvCHV7TILFRTEqDfBqnuvof7lnCJY4tgoQq9SBocdN2EUPI+oU09wTgpiRAwT0uUipLpdwVBbYNpSHfFEHEXq3pxdDMWPjV0MXMHA3jX67a5Ul96nJEbEdULOuAh1vVdvSXVkuXh+jAJMmr8UIfe18NtAUr06Eyn65HOlQC3i/SYh556IQfyYvzX2wOJjTns7Wn+qogi/Zz7Yw5BVcKT+0eCYbRN2zUBP+Np/J0bErXaoRXyY2hEj4l471CKmD9oRI8LSDrUIxT+vrBMVwW7e4r6ZjfWBfiPkm7fe7fwqNky0gfJGbueLBzzzySEspo+w+HzJLpiPclLeyAMeIWNm6vHIj3IKCREROpOLYLjwA+4yOhJtF66uAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Notas Fiscais'" sap:VirtualizedContainerService.HintSize="530,157" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Geral/Home.aspx" DesignTimeRectangle="540, 257, 103, 23" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Notas Fiscais'" FullSelectorArgument="&lt;webctrl aaname='Notas Fiscais' parentid='top-menu' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Notas Fiscais' parentid='top-menu' tag='A' type='' class='' check:innerText='Notas Fiscais' /&gt;" Guid="69d50ca4-e1a3-4982-ab33-cdde992865cf" InformativeScreenshot="16200b0792bdd52c9ab08b450694b189.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Exportar Notas'" sap:VirtualizedContainerService.HintSize="530,157" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Geral/Home.aspx" DesignTimeRectangle="540, 671, 266, 23" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Exportar Notas'" FullSelectorArgument="&lt;webctrl aaname='Exportar Notas para Arquivo' parentid='top-menu' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Exportar Notas para Arquivo' parentid='top-menu' tag='A' type='' class='' check:innerText='Exportar Notas para Arquivo' /&gt;" Guid="c0234cd2-0f06-47e6-8398-2837a69ac1c1" InformativeScreenshot="9d709b2a8a2a5c2a877cf801d14a1b60.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'checked'" sap:VirtualizedContainerService.HintSize="530,157" sap2010:WorkflowViewState.IdRef="NCheck_5" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Version="V3">
+              <uix:NCheck.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Prestador/ExportacaoArquivoNFE.aspx?IdPermissaoAcesso=203" DesignTimeRectangle="365, 605, 16, 16" DesignTimeScaleFactor="1.25" ElementType="RadioButton" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl id='MainContentPlaceHolder_MainContentPlaceHolder_rbRecebidas' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContentPlaceHolder_MainContentPlaceHolder_rbRecebidas' tag='INPUT' type='radio' class='' aaname='Recebidas pela minha Empresa (Serviços Tomados)' /&gt;" Guid="adfc4216-c3e5-46a7-953f-3043bec05e70" InformativeScreenshot="2b3ea5eb855790588adee7ecc7558ae6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="365, 605, 1188, 23" ElementType="Text" FriendlyName="'checked'" FullSelectorArgument="&lt;webctrl aaname='Recebidas pela minha Empresa (Serviços Tomados)' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Recebidas pela minha Empresa (Serviços Tomados)' tag='LABEL' type='' class='' check:innerText='Recebidas pela minha Empresa (Serviços Tomados)' /&gt;" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheck.Target>
+            </uix:NCheck>
+            <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'unchecked'" sap:VirtualizedContainerService.HintSize="530,157" sap2010:WorkflowViewState.IdRef="NCheck_2" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Version="V3">
+              <uix:NCheck.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Prestador/ExportacaoArquivoNFE.aspx?IdPermissaoAcesso=203" DesignTimeRectangle="208, 613, 13, 13" DesignTimeScaleFactor="1" ElementType="RadioButton" FriendlyName="'INPUT rbXML'" FullSelectorArgument="&lt;webctrl id='rbXML' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='rbXML' tag='INPUT' type='radio' class='' aaname='XML - Arquivo contendo os dados das notas organizados em estrtutura XML (máximo 5.000 notas por arquivo).' /&gt;" Guid="db7e03b3-1725-493e-89a5-e12baba6f900" InformativeScreenshot="0b9116f7c5774ab7e364deef6f28b0e7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="208, 613, 950, 18" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl aaname='XML - Arquivo contendo os dados das notas organizados em estrtut*' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='XML - Arquivo contendo os dados das notas organizados em estrtut*' tag='LABEL' type='' class='' check:innerText='XML - Arquivo contendo os dados das notas organizados em estrtutura XML (máximo 5.000 notas por' /&gt;" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheck.Target>
+            </uix:NCheck>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT txtDataInicial'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="530,218" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Text="01/06/2023" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Prestador/ExportacaoArquivoNFE.aspx?IdPermissaoAcesso=203" DesignTimeRectangle="261, 707, 158, 15" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT txtDataInicial'" FullSelectorArgument="&lt;webctrl id='txtDataInicial' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='txtDataInicial' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="0e1e3142-ef45-4821-bf2a-0981c8aa4eb1" InformativeScreenshot="aed3374aaf91eea4162f985c7e9173c8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT txtDataFinal'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="530,218" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Text="30/06/2023" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Prestador/ExportacaoArquivoNFE.aspx?IdPermissaoAcesso=203" DesignTimeRectangle="433, 589, 158, 15" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT txtDataFinal'" FullSelectorArgument="&lt;webctrl id='txtDataFinal' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='txtDataFinal' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="16dac76e-9a45-4528-bd2f-40cb98751711" InformativeScreenshot="598731816e96827f3d325204a9ad6a55.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Gerar Arquivo'" sap:VirtualizedContainerService.HintSize="530,157" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Prestador/ExportacaoArquivoNFE.aspx?IdPermissaoAcesso=203" CvElementArea="986, 684, 97, 22" CvTextArea="996, 689, 78, 13" CvTextArgument="Gerar Arquivo" CvType="Button" DesignTimeRectangle="987, 685, 95, 19" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Gerar Arquivo'" FullSelectorArgument="&lt;webctrl id='CommandsContentPlaceHolder_CommandsContentPlaceHolder_btnExportarArquivo' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='CommandsContentPlaceHolder_CommandsContentPlaceHolder_btnExportarArquivo' tag='INPUT' type='submit' class='button' aaname='Gerar Arquivo' check:text='Gerar Arquivo' /&gt;" Guid="a9a8ceb8-2700-4bb7-bbe2-9159853220e7" InformativeScreenshot="c65d8b3ee928857b38aef23407b705ba.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'checked'" sap:VirtualizedContainerService.HintSize="530,157" sap2010:WorkflowViewState.IdRef="NCheck_4" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Version="V3">
+              <uix:NCheck.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Prestador/ExportacaoArquivoNFE.aspx?IdPermissaoAcesso=203" DesignTimeRectangle="208, 559, 13, 13" DesignTimeScaleFactor="1" ElementType="RadioButton" FriendlyName="'INPUT rbPDF'" FullSelectorArgument="&lt;webctrl id='rbPDF' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='rbPDF' tag='INPUT' type='radio' class='' aaname='PDF - Arquivo contendo as imagens das notas geradas (máximo 1.000 notas por arquivo).' /&gt;" Guid="d3a3bf2d-2297-4c34-a2c9-a57be4f140ff" InformativeScreenshot="3b37398afc98342f6753ea02c6b878c0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="245, 561, 477, 14" CvTextArgument="- Arquivo contendo as imagens das notas geradas (maximo 1.000 notas por arquivo)." CvType="Text" DesignTimeRectangle="208, 559, 950, 18" ElementType="Text" FriendlyName="'checked'" FullSelectorArgument="&lt;webctrl aaname='PDF - Arquivo contendo as imagens das notas geradas (máximo 1.00*' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='PDF - Arquivo contendo as imagens das notas geradas (máximo 1.00*' tag='LABEL' type='' class='' check:innerText='PDF - Arquivo contendo as imagens das notas geradas (máximo 1.000 notas por arquivo).' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheck.Target>
+            </uix:NCheck>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Gerar Arquivo'" sap:VirtualizedContainerService.HintSize="530,157" sap2010:WorkflowViewState.IdRef="NClick_19" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1cfdc76d-3295-418d-84c4-af4191e778c3" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Sistema/Prestador/ExportacaoArquivoNFE.aspx?IdPermissaoAcesso=203" CvElementArea="986, 684, 97, 22" CvTextArea="996, 689, 78, 13" CvTextArgument="Gerar Arquivo" CvType="Button" DesignTimeRectangle="987, 685, 95, 19" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Gerar Arquivo'" FullSelectorArgument="&lt;webctrl id='CommandsContentPlaceHolder_CommandsContentPlaceHolder_btnExportarArquivo' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='CommandsContentPlaceHolder_CommandsContentPlaceHolder_btnExportarArquivo' tag='INPUT' type='submit' class='button' aaname='Gerar Arquivo' check:text='Gerar Arquivo' /&gt;" Guid="a9a8ceb8-2700-4bb7-bbe2-9159853220e7" InformativeScreenshot="c65d8b3ee928857b38aef23407b705ba.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ISS/NF-E' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[Exists]" sap:VirtualizedContainerService.HintSize="530,115" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[DocumentNotaFiscalPath]" PathType="Folder" />
+            <If Condition="[Exists = true]" sap:VirtualizedContainerService.HintSize="530,629" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="strTextoPDF" />
+                    <Variable x:TypeArguments="x:String" Name="strTextCNPJ" />
+                    <Variable x:TypeArguments="x:String" Name="textCNPJ" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,367" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="DocumentPath">
+                      <Variable.Default>
+                        <Literal x:TypeArguments="x:String">C:\Users\peruc\OneDrive\Documentos</Literal>
+                      </Variable.Default>
+                    </Variable>
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="DadosNotaFiscall" />
+                  <ui:MoveFolderX DisplayName="Move Folder" From="C:\Users\peruc\Downloads\notafiscalui-main\DadosNotaFiscall" sap:VirtualizedContainerService.HintSize="334,159" sap2010:WorkflowViewState.IdRef="MoveFolderX_1" Overwrite="False" To="[DocumentPath]" />
+                </Sequence>
+              </If.Else>
+            </If>
+            <Assign sap:VirtualizedContainerService.HintSize="530,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[folderPathLatestDownload]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[DownloadPath]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="530,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="scg:IEnumerable(x:String)">[latesteFile]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="scg:IEnumerable(x:String)">[Directory.GetFiles(folderPathLatestDownload,"*.xml").OrderByDescending(Function (f) new FileInfo (f).LastWriteTime).Take(1)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[DocumentNotaFiscalPath]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="530,159" sap2010:WorkflowViewState.IdRef="MoveFile_5" Path="[latesteFile(0)]" />
+            <ui:ReadTextFile File="{x:Null}" Content="[xmlOut]" DisplayName="Read Text File" FileName="[latesteFile(0)]" sap:VirtualizedContainerService.HintSize="530,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+            <ui:DeserializeXml DisplayName="Deserialize XML" sap:VirtualizedContainerService.HintSize="530,60" sap2010:WorkflowViewState.IdRef="DeserializeXml_1" XMLDocument="[out_data]" XMLString="[xmlOut]" />
+            <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="530,600" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[out_data.Elements(&quot;NFE&quot;).Elements(&quot;NotaFiscalRelatorioDTO&quot;)]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="sxl:XElement">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sxl:XElement" Name="currentItem" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="476,414" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="strValorTotal" />
+                      <Variable x:TypeArguments="x:String" Name="ValorTotalXML" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_10">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[nomeXML]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[currentItem.Elements("Prestador").Elements("Nome").Value]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_11">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[cnpjXML]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[currentItem.Elements("Prestador").Elements("CNPJ").Value]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_9">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[vtXML]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[currentItem.Element("Valor").Value]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+            <Assign sap:VirtualizedContainerService.HintSize="530,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="scg:IEnumerable(x:String)">[latesteFilePDF]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="scg:IEnumerable(x:String)">[Directory.GetFiles(folderPathLatestDownload,"*.pdf").OrderByDescending(Function (f) new FileInfo (f).LastWriteTime).Take(1)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[DocumentNotaFiscalPath]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="530,159" sap2010:WorkflowViewState.IdRef="MoveFile_10" Path="[latesteFilePDF(0)]" />
+            <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text" FileName="[latesteFilePDF(0)]" sap:VirtualizedContainerService.HintSize="530,82" sap2010:WorkflowViewState.IdRef="ReadPDFText_3" Range="All" Text="[textoPDF]" />
+            <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right" FullText="[textoPDF]" sap:VirtualizedContainerService.HintSize="530,272" sap2010:WorkflowViewState.IdRef="TextToLeftRight_6" Separator="CNPJ/CPF:" SeparatorKey="Custom" TextToRight="[afterSeparator]" />
+            <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right" FullText="[afterSeparator]" sap:VirtualizedContainerService.HintSize="530,272" sap2010:WorkflowViewState.IdRef="TextToLeftRight_5" Separator="Inscrição Municipal" SeparatorKey="Custom" TextToLeft="[strCNPJdado]" />
+            <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right" FullText="[textoPDF]" sap:VirtualizedContainerService.HintSize="530,272" sap2010:WorkflowViewState.IdRef="TextToLeftRight_7" Separator="Razão Social/Nome:" SeparatorKey="Custom" TextToRight="[beforeSeparatorNome]" />
+            <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right" FullText="[beforeSeparatorNome]" sap:VirtualizedContainerService.HintSize="530,272" sap2010:WorkflowViewState.IdRef="TextToLeftRight_8" Separator="CNPJ/CPF:" SeparatorKey="Custom" TextToLeft="[NomePdf]" />
+            <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right" FullText="[beforeSeparatorNome]" sap:VirtualizedContainerService.HintSize="530,272" sap2010:WorkflowViewState.IdRef="TextToLeftRight_9" Separator="Outros (R$):" SeparatorKey="Custom" TextToRight="[AfterSeparatorPdf]" />
+            <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right" FullText="[AfterSeparatorPdf]" sap:VirtualizedContainerService.HintSize="530,272" sap2010:WorkflowViewState.IdRef="TextToLeftRight_10" Separator="Verifique a autenticidade" SeparatorKey="Custom" TextToLeft="[ValorNotaPdf]" />
+            <ui:BuildDataTable DataTable="[dt_Table]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="530,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Razão_x0020_Social&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;CNPJ&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Valor_x0020_Total_x0020_Nota&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Modo&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{RazaoSocial, CNPJ, ValorTotalNota, &quot;Site&quot;}]" DataTable="[dt_Table]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="530,186" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{nomeXML, cnpjXML, vtXML, &quot;XML&quot;}]" DataTable="[dt_Table]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="530,186" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{NomePdf, strCNPJdado, ValorNotaPdf,  &quot;PDF&quot;}]" DataTable="[dt_Table]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="530,186" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
+            <ui:WriteRange AddHeaders="True" DataTable="[dt_Table]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="530,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="DadosNFE" StartingCell="A1" WorkbookPath="Dadosnfe.xlsx" />
+            <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="C:\Users\peruc\OneDrive\Documentos\DadosNotaFiscall" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="530,159" sap2010:WorkflowViewState.IdRef="MoveFile_3" Overwrite="True" Path="Dadosnfe.xlsx" />
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="530,500" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" ResizeWindow="None" WorkbookPath="C:\Users\peruc\OneDrive\Documentos\DadosNotaFiscall\Dadosnfe.xlsx">
+              <ueab:ExcelApplicationCard.Body>
+                <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="496,231" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ueab:AutoFitX Columns="True" DisplayName="Autofit Range" sap:VirtualizedContainerService.HintSize="434,116" sap2010:WorkflowViewState.IdRef="AutoFitX_2" Range="[Excel.Sheet(&quot;DadosNFE&quot;)]" Rows="True" />
+                  </Sequence>
+                </ActivityAction>
+              </ueab:ExcelApplicationCard.Body>
+            </ueab:ExcelApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="c9405cc1f11e5d976a580e4415f0c2a3.jpg" Selector="&lt;html app='chrome.exe' title='Portal de serviços' /&gt;" Title="Portal de serviços" Url="https://nfe.osasco.sp.gov.br/EissnfeWebApp/Portal/Default.aspx?ReturnUrl=%2fEissnfeWebApp%2fSistema%2fGeral%2fLogin.aspx" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
